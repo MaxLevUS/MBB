@@ -523,6 +523,19 @@ header.scrolled {
 }
 
 
+
+/* ---------- Portfolio section ---------- */
+
+.portfolio {
+  overflow: hidden;
+  background: #171411;
+  color: var(--white);
+}
+
+.portfolio .section-head p {
+  color: #eee6de;
+}
+
 /* =========================================================
    PORTFOLIO GRID AND FULLSCREEN LIGHTBOX
    ========================================================= */
@@ -557,9 +570,10 @@ header.scrolled {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: none;
   object-fit: cover;
   object-position: center;
-  transform: scale(1);
+  transform: none;
   transition:
     transform 0.45s ease,
     filter 0.45s ease;
@@ -567,29 +581,22 @@ header.scrolled {
 
 .portfolio-open:hover img,
 .portfolio-open:focus-visible img {
-  transform: scale(1.04);
-  filter: brightness(0.88);
+  transform: scale(1.035);
+  filter: brightness(0.9);
 }
-
-/* Fullscreen viewer */
 
 .portfolio-lightbox {
   position: fixed;
   inset: 0;
   z-index: 10000;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 34px;
-
-  background: rgba(10, 8, 7, 0.94);
-
+  background: rgba(10, 8, 7, 0.95);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
   transition:
     opacity 0.25s ease,
     visibility 0.25s ease;
@@ -603,15 +610,11 @@ header.scrolled {
 
 .portfolio-lightbox img {
   display: block;
-
   width: auto;
   height: auto;
-
   max-width: min(94vw, 1500px);
   max-height: 92vh;
-
   object-fit: contain;
-
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
 }
 
@@ -620,23 +623,18 @@ header.scrolled {
   top: 20px;
   right: 25px;
   z-index: 10001;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 48px;
   height: 48px;
   padding: 0;
-
   border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(20, 17, 15, 0.7);
+  background: rgba(20, 17, 15, 0.72);
   color: #ffffff;
-
   font-size: 34px;
   font-weight: 300;
   line-height: 1;
-
   cursor: pointer;
 }
 
@@ -650,15 +648,11 @@ body.lightbox-open {
   overflow: hidden;
 }
 
-/* Tablet */
-
 @media (max-width: 900px) {
   .masonry {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-/* Mobile */
 
 @media (max-width: 640px) {
   .masonry {
@@ -682,10 +676,8 @@ body.lightbox-open {
   .lightbox-close {
     top: 10px;
     right: 10px;
-
     width: 42px;
     height: 42px;
-
     font-size: 29px;
   }
 }
@@ -1413,16 +1405,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 14px;
   }
-
-  /*
-    On phones, slightly taller cards look better than very large squares.
-  */
-
-  .masonry figure {
-    aspect-ratio: 4 / 5;
-  }
-
-  .services-grid,
+.services-grid,
   .process-grid,
   .reviews-grid {
     grid-template-columns: 1fr;
