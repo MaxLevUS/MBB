@@ -75,3 +75,71 @@ document.getElementById('inquiryForm').addEventListener('submit', async (e) => {
     button.textContent = 'Send Inquiry';
   }
 });
+
+
+const portfolioButtons = document.querySelectorAll(".portfolio-open");
+const portfolioLightbox = document.getElementById("portfolioLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+let lastFocusedPortfolioButton = null;
+
+function openPortfolioLightbox(button) {
+  const fullImage = button.dataset.full;
+  const previewImage = button.querySelector("img");
+
+  if (!fullImage || !portfolioLightbox || !lightboxImage) {
+    return;
+  }
+
+  lastFocusedPortfolioButton = button;
+
+  lightboxImage.src = fullImage;
+  lightboxImage.alt =
+    previewImage?.alt || "Expanded bridal portfolio image";
+
+  portfolioLightbox.classList.add("is-open");
+  portfolioLightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("lightbox-open");
+
+  lightboxClose.focus();
+}
+
+function closePortfolioLightbox() {
+  if (!portfolioLightbox || !lightboxImage) {
+    return;
+  }
+
+  portfolioLightbox.classList.remove("is-open");
+  portfolioLightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("lightbox-open");
+
+  lightboxImage.src = "";
+
+  if (lastFocusedPortfolioButton) {
+    lastFocusedPortfolioButton.focus();
+  }
+}
+
+portfolioButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    openPortfolioLightbox(button);
+  });
+});
+
+lightboxClose?.addEventListener("click", closePortfolioLightbox);
+
+portfolioLightbox?.addEventListener("click", (event) => {
+  if (event.target === portfolioLightbox) {
+    closePortfolioLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    portfolioLightbox?.classList.contains("is-open")
+  ) {
+    closePortfolioLightbox();
+  }
+});
