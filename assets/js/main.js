@@ -32,6 +32,46 @@ if (peopleCount && peopleMinus && peoplePlus) {
   });
 }
 
+/* Event date picker */
+
+const eventDate = document.getElementById("eventDate");
+const openDatePicker = document.getElementById("openDatePicker");
+
+function showEventDatePicker() {
+  if (!eventDate) {
+    return;
+  }
+
+  try {
+    if (typeof eventDate.showPicker === "function") {
+      eventDate.showPicker();
+    } else {
+      eventDate.focus();
+      eventDate.click();
+    }
+  } catch (error) {
+    eventDate.focus();
+    eventDate.click();
+  }
+}
+
+openDatePicker?.addEventListener("click", showEventDatePicker);
+
+eventDate?.addEventListener("click", () => {
+  try {
+    if (typeof eventDate.showPicker === "function") {
+      eventDate.showPicker();
+    }
+  } catch (error) {
+    /*
+      На некоторых мобильных браузерах календарь
+      откроется обычным нативным способом.
+    */
+  }
+});
+
+
+
 /* Custom service dropdown */
 
 const serviceSelect = document.getElementById("serviceSelect");
