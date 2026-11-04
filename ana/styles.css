@@ -113,3 +113,23 @@ h1 em,h2 em{font-weight:400}
 @media(max-width:760px){.container{width:min(calc(100% - 38px),560px)}.header-inner{min-height:79px}.brand-name{font-size:19px}.brand-caption{font-size:9px}.main-nav{gap:10px}.main-nav>a:not(.nav-cta){display:none}.nav-cta{font-size:10px!important;padding:11px}.hero{padding:35px 0 75px}.hero-grid{grid-template-columns:1fr;gap:25px;min-height:unset}.hero-text{padding:30px 0 0}.hero h1{font-size:clamp(76px,16vw,110px)}.hero-images{height:445px}.hero-image-main{height:395px;width:79%}.hero-image-small{height:230px;width:49%;border-width:6px}.hero-corner-label{font-size:13px;right:0;bottom:5px}.about-section,.inquiry-section{padding:78px 0}.about-grid,.inquiry-grid{grid-template-columns:1fr;gap:32px}.about-grid h2{font-size:54px}.portfolio-section{padding:74px 0}.portfolio-header{display:block}.filters{margin-top:25px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.work-card figcaption{display:block;font-size:15px}.work-card figcaption small{display:block;margin-top:5px}.approach-section{padding:75px 0}.approach-grid{display:block}.approach-grid>.eyebrow{margin-bottom:28px}.form-wrap{padding:25px}.footer-inner{flex-direction:column;align-items:flex-start;gap:9px}.lightbox{padding:58px 49px 48px}}
 @media(max-width:450px){.brand-name{font-size:16px}.brand-caption{font-size:8px}.container{width:calc(100% - 32px)}.hero h1{font-size:78px}.hero-description{font-size:14px}.hero-images{height:370px}.hero-image-main{height:325px}.hero-image-small{height:203px}.hero-corner-label{font-size:11px}.gallery{gap:20px 11px}.work-card figcaption{font-size:13px}.filter{padding:10px 13px}.field-row{grid-template-columns:1fr;gap:0}.lightbox{padding:55px 34px 45px}.lightbox button{width:35px;height:35px}.lightbox-prev{left:4px}.lightbox-next{right:4px}.lightbox-close{right:8px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* 2026-11: Ana's real portrait, new portfolio images and silent short videos. */
+.hero-image-main img{object-position:center 22%}
+.hero-image-small img{object-position:50% 50%}
+.reels-section{background:#f7f2eb;padding:110px 0 120px;color:var(--ink)}
+.reels-intro{display:flex;align-items:end;justify-content:space-between;gap:46px;margin-bottom:38px}
+.reels-intro h2{font-size:clamp(50px,6vw,79px);line-height:1.07}
+.reels-intro h2 em{color:#946a3b}
+.reels-intro>p{max-width:340px;font-size:14px;line-height:1.8;color:var(--text);padding-bottom:5px}
+.reels-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}
+.reel-card{min-width:0}
+.reel-video-wrap{aspect-ratio:9/16;background:#27201b;overflow:hidden;box-shadow:0 12px 30px #22181113}
+.reel-video{display:block;width:100%;height:100%;object-fit:cover;outline-offset:-3px;background:#27201b}
+.reel-card figcaption{display:flex;flex-direction:column;gap:6px;padding:14px 2px 0}
+.reel-card figcaption strong{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:17px;line-height:1.2}
+.reel-card figcaption span{font-size:12px;color:var(--text);line-height:1.5}
+@media(max-width:1050px){.reels-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+@media(max-width:760px){.reels-section{padding:75px 0}.reels-intro{display:block}.reels-intro>p{margin-top:18px;max-width:500px}.reels-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}}
+@media(max-width:450px){.reel-card figcaption strong{font-size:15px}.reel-card figcaption span{font-size:11px}.reels-intro h2{font-size:51px}}

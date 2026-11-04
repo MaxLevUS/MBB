@@ -69,6 +69,12 @@
     }
   });
 
+  // Only one portfolio video plays at a time.
+  const reels = [...document.querySelectorAll('.reel-video')];
+  reels.forEach(video => video.addEventListener('play', () => {
+    reels.forEach(other => { if (other !== video) other.pause(); });
+  }));
+
   // Uses the same FormSubmit destination as the existing MBB homepage.
   const form = document.getElementById("anaInquiry");
   const status = document.getElementById("formStatus");
