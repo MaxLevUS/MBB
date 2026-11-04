@@ -115,7 +115,7 @@ h1 em,h2 em{font-weight:400}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 
 
-/* 2026-11: Ana's real portrait, new portfolio images and silent short videos. */
+/* 2026-11: Ana's real portrait, new portfolio images and short videos with sound. */
 .hero-image-main img{object-position:center 22%}
 .hero-image-small img{object-position:50% 50%}
 .reels-section{background:#f7f2eb;padding:110px 0 120px;color:var(--ink)}
